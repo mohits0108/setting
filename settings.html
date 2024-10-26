@@ -1,0 +1,1595 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+	<style>
+		.sidebar {
+			height: 100vh;
+			position: fixed;
+			left: 0;
+			top: 0;
+			width: 250px;
+			background-color: #f8f9fa;
+			padding-top: 20px;
+		}
+
+		.content {
+			margin-left: 270px;
+			padding: 20px;
+		}
+
+		.content h3 {
+			padding: 1rem 0;
+		}
+
+		.sidebar i {
+			margin-right: 12px;
+			font-size: 12px;
+		}
+	</style>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
+	<meta name="apple-mobile-web-app-capable" content="yes" />
+	<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+	<title>Default Title</title>
+	<meta name="description" content="Default description">
+	<meta property="og:title" content="Default Title">
+	<meta property="og:description" content="Default description">
+	<meta property="og:image" content="/default-share-image.png">
+	<meta name="twitter:card" content="summary_large_image">
+	<meta name="twitter:title" content="Default Title">
+	<meta name="twitter:description" content="Default description">
+	<meta name="twitter:image" content="/default-twitter-image.png">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+		integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+		crossorigin="anonymous" referrerpolicy="no-referrer" />
+	<link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/css/bootstrap.min.css" rel="stylesheet" />
+
+
+	
+	<script
+		nonce="9a7a15b9-2d67-4ed5-9325-9009358a1554">try { (function (w, d) { !function (j, k, l, m) { if (j.zaraz) console.error("zaraz is loaded twice"); else { j[l] = j[l] || {}; j[l].executed = []; j.zaraz = { deferred: [], listeners: [] }; j.zaraz._v = "5796"; j.zaraz.q = []; j.zaraz._f = function (n) { return async function () { var o = Array.prototype.slice.call(arguments); j.zaraz.q.push({ m: n, a: o }) } }; for (const p of ["track", "set", "debug"]) j.zaraz[p] = j.zaraz._f(p); j.zaraz.init = () => { var q = k.getElementsByTagName(m)[0], r = k.createElement(m), s = k.getElementsByTagName("title")[0]; s && (j[l].t = k.getElementsByTagName("title")[0].text); j[l].x = Math.random(); j[l].w = j.screen.width; j[l].h = j.screen.height; j[l].j = j.innerHeight; j[l].e = j.innerWidth; j[l].l = j.location.href; j[l].r = k.referrer; j[l].k = j.screen.colorDepth; j[l].n = k.characterSet; j[l].o = (new Date).getTimezoneOffset(); if (j.dataLayer) for (const w of Object.entries(Object.entries(dataLayer).reduce(((x, y) => ({ ...x[1], ...y[1] })), {}))) zaraz.set(w[0], w[1], { scope: "page" }); j[l].q = []; for (; j.zaraz.q.length;) { const z = j.zaraz.q.shift(); j[l].q.push(z) } r.defer = !0; for (const A of [localStorage, sessionStorage]) Object.keys(A || {}).filter((C => C.startsWith("_zaraz_"))).forEach((B => { try { j[l]["z_" + B.slice(7)] = JSON.parse(A.getItem(B)) } catch { j[l]["z_" + B.slice(7)] = A.getItem(B) } })); r.referrerPolicy = "origin"; r.src = "/cdn-cgi/zaraz/s.js?z=" + btoa(encodeURIComponent(JSON.stringify(j[l]))); q.parentNode.insertBefore(r, q) };["complete", "interactive"].includes(k.readyState) ? zaraz.init() : j.addEventListener("DOMContentLoaded", zaraz.init) } }(w, d, "zarazData", "script"); window.zaraz._p = async bv => new Promise((bw => { if (bv) { bv.e && bv.e.forEach((bx => { try { const by = d.querySelector("script[nonce]"), bz = by?.nonce || by?.getAttribute("nonce"), bA = d.createElement("script"); bz && (bA.nonce = bz); bA.innerHTML = bx; bA.onload = () => { d.head.removeChild(bA) }; d.head.appendChild(bA) } catch (bB) { console.error(`Error executing script: ${bx}\n`, bB) } })); Promise.allSettled((bv.f || []).map((bC => fetch(bC[0], bC[1])))) } bw() })); zaraz._p({ "e": ["(function(w,d){})(window,document)"] }); })(window, document) } catch (e) { throw fetch("/cdn-cgi/zaraz/t"), e; };</script>
+</head>
+
+<body>
+	<div class="sidebar p-0">
+		<nav class="navbar p-0">
+			<ul class="nav nav-pills d-flex flex-column flex-fill h-100" id="sidebar-scroll-spy">
+				<li class="nav-item">
+					<a class="nav-link rounded-0 d-flex flex-row justify-content-start align-items-center"
+						href="#brand-settings"><i class="fa-solid fa-house"></i>General</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link rounded-0 d-flex flex-row justify-content-start align-items-center"
+						href="#communication-settings"><i class="fa-solid fa-phone"></i>Communication</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link rounded-0 d-flex flex-row justify-content-start align-items-center"
+						href="#compliance-settings"><i class="fa-solid fa-shield"></i>Compliance</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link rounded-0 active d-flex flex-row justify-content-start align-items-center"
+						href="#social-settings"><i class="fa-solid fa-hashtag"></i>Social</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link rounded-0 active d-flex flex-row justify-content-start align-items-center"
+						href="#event-settings"><i class="fa-solid fa-calendar-check"></i>Events</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link rounded-0 active d-flex flex-row justify-content-start align-items-center"
+						href="#URL-settings"><i class="fa-solid fa-link"></i>URLs</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link rounded-0 active d-flex flex-row justify-content-start align-items-center"
+						href="#support-settings"><i class="fa-solid fa-envelope"></i>Support</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link rounded-0 active d-flex flex-row justify-content-start align-items-center"
+						href="#addons-settings"><i class="fa-solid fa-list"></i>Addons</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link rounded-0 active d-flex flex-row justify-content-start align-items-center"
+						href="#tax-settings"><i class="fa-solid fa-money-check"></i>Tax</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link rounded-0 active d-flex flex-row justify-content-start align-items-center"
+						href="#Printer-settings"><i class="fa-solid fa-print"></i>Printer/Print</a>
+				</li>
+				
+				<li class="nav-item">
+					<a class="nav-link rounded-0 d-flex flex-row justify-content-start align-items-center"
+						href="#discounts-settings"><i class="fa-solid fa-tags"></i>Discounts</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link rounded-0 d-flex flex-row justify-content-start align-items-center"
+						href="#Restriction-settings"><i class="fa-solid fa-ban"></i>Restrictions</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link rounded-0 d-flex flex-row justify-content-start align-items-center"
+						href="#notification-settings"><i class="fa-solid fa-comment"></i>Notifications</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link rounded-0 d-flex flex-row justify-content-start align-items-center"
+						href="#payment-settings"><i class="fa-solid fa-credit-card"></i>Payment Gateway</a>
+				</li>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link rounded-0 d-flex flex-row justify-content-start align-items-center"
+						href="#features-settings"><i class="fa-solid fa-sliders"></i>Enable/ Disable Features</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link rounded-0 d-flex flex-row justify-content-start align-items-center"
+						href="#code-settings"><i class="fa-solid fa-code"></i>Custom Code</a>
+				</li>
+			</ul>
+		</nav>
+	</div>
+	<div class="content shadow-lg">
+		<div
+			class="bg-light sticky-top flex-row d-flex justify-content-between p-2 ps-4 pe-4 shadow-sm align-items-center">
+			<small class="m-0 fs-5">Settings <span id="active-section"></span></small>
+            <button type="submit" id="submitBtn" class="btn btn-primary bg-gradient">Save</button>
+		</div>
+		<div data-bs-spy="scroll" data-bs-target="#sidebar-scroll-spy" data-bs-root-margin="0px 0px -40%"
+			data-bs-smooth-scroll="true" data-bs-threshold="[0.1, 0.5, 1]"
+			class="scrollspy bg-body-tertiary p-3 rounded-2 container ps-4 pe-4" tabindex="0">
+			<form id="brandSettingsForm">
+				<div class="d-flex flex-row justify-content-center">
+					<div class="col-sm-6 d-flex flex-column gap-2 mt-3">
+
+                            <h3 id="brand-settings">General</h3>
+                            <div class="form-floating">
+                                <input type="text" id="brandName" name="brandname" class="form-control is-valid"
+                                    placeholder="Your Brand Name" readonly="readonly" value="Bhavans Sanskritik Kendra" />
+                                <label for="brandName">Brand Name</label>
+                            </div>
+                            <div class="form-floating">
+                                <input type="text" id="brandNameHTML" name="brandname" class="form-control is-valid"
+                                    placeholder="Your Brand Name in HTML" readonly="readonly" value="<b>Bhavans Sanskritik Kendra</b>" />
+                                <label for="brandName">Brand Name in HTML(check supported html tags)</label>
+                            </div>
+                            <div class="form-floating">
+                                <select class="form-select" id="currency">
+                                    <option value="Rupee" currencySymbol="₹">Rupee (₹) - India</option>
+                                    <option value="Dollar" currencySymbol="$">Dollar ($) - United States</option>
+                                    <option value="Euro" currencySymbol="€">Euro (€) - Eurozone</option>
+                                    <option value="Pound" currencySymbol="£">Pound (£) - United Kingdom</option>
+                                    <option value="Yen" currencySymbol="¥">Yen (¥) - Japan</option>
+                                    <option value="Won" currencySymbol="₩">Won (₩) - South Korea</option>
+                                    <option value="Ruble" currencySymbol="₽">Ruble (₽) - Russia</option>
+                                    <option value="Yuan" currencySymbol="¥">Yuan (¥) - China</option>
+                                    <option value="Franc" currencySymbol="CHF">Franc (CHF) - Switzerland</option>
+                                    <option value="Australian Dollar" currencySymbol="A$">
+                                        Australian Dollar (A$) - Australia
+                                    </option>
+                                    <option value="Canadian Dollar" currencySymbol="C$">Canadian Dollar (C$) - Canada
+                                    </option>
+                                    <option value="Peso" currencySymbol="₱">Peso (₱) - Philippines</option>
+                                    <option value="Real" currencySymbol="R$">Real (R$) - Brazil</option>
+                                    <option value="Rupee" currencySymbol="₨">Rupee (₨) - Pakistan</option>
+                                    <option value="Ringgit" currencySymbol="RM">Ringgit (RM) - Malaysia</option>
+                                    <option value="Lira" currencySymbol="₺">Lira (₺) - Turkey</option>
+                                    <option value="Dirham" currencySymbol="د.إ">Dirham (د.إ) - United Arab Emirates</option>
+                                    <option value="Riyal" currencySymbol="ر.س">Riyal (ر.س) - Saudi Arabia</option>
+                                    <option value="Krona" currencySymbol="kr">Krona (kr) - Sweden</option>
+                                    <option value="Baht" currencySymbol="฿">Baht (฿) - Thailand</option>
+                                </select>
+                                <label for="currency">Currency</label>
+                            </div>
+							<div class="form-floating mb-3">
+								<input type="symbol" class="form-control is-valid" id="Currencysymbol" placeholder="" readonly value="₹">
+								<label for="Currencysymbol">Currency Symbol</label>
+							  </div>
+                            <div class="form-floating">
+                                <select name="timezone" id="timezone" class="form-select">
+                                    <option value="UTC-12:00" timeZoneName="Etc/GMT+12">
+                                        (UTC-12:00) International Date Line West
+                                    </option>
+                                    <option value="UTC-11:00" timeZoneName="Etc/GMT+11">
+                                        (UTC-11:00) Coordinated Universal Time-11
+                                    </option>
+                                    <option value="UTC-10:00" timeZoneName="Pacific/Honolulu">(UTC-10:00) Hawaii</option>
+                                    <option value="UTC-09:00" timeZoneName="America/Anchorage">(UTC-09:00) Alaska</option>
+                                    <option value="UTC-08:00" timeZoneName="America/Los_Angeles">
+                                        (UTC-08:00) Pacific Time (US &amp; Canada)
+                                    </option>
+                                    <option value="UTC-07:00" timeZoneName="America/Denver">
+                                        (UTC-07:00) Mountain Time (US &amp; Canada)
+                                    </option>
+                                    <option value="UTC-06:00" timeZoneName="America/Chicago">
+                                        (UTC-06:00) Central Time (US &amp; Canada)
+                                    </option>
+                                    <option value="UTC-05:00" timeZoneName="America/New_York">
+                                        (UTC-05:00) Eastern Time (US &amp; Canada)
+                                    </option>
+                                    <option value="UTC-04:00" timeZoneName="America/Santiago">(UTC-04:00) Santiago</option>
+                                    <option value="UTC-03:00" timeZoneName="America/Argentina/Buenos_Aires">
+                                        (UTC-03:00) Buenos Aires
+                                    </option>
+                                    <option value="UTC-02:00" timeZoneName="Etc/GMT+2">
+                                        (UTC-02:00) Coordinated Universal Time-02
+                                    </option>
+                                    <option value="UTC-01:00" timeZoneName="Atlantic/Azores">(UTC-01:00) Azores</option>
+                                    <option value="UTC+00:00" timeZoneName="Europe/London">(UTC+00:00) London</option>
+                                    <option value="UTC+01:00" timeZoneName="Europe/Paris">(UTC+01:00) Paris</option>
+                                    <option value="UTC+02:00" timeZoneName="Europe/Athens">(UTC+02:00) Athens</option>
+                                    <option value="UTC+03:00" timeZoneName="Europe/Moscow">(UTC+03:00) Moscow</option>
+                                    <option value="UTC+04:00" timeZoneName="Asia/Dubai">(UTC+04:00) Dubai</option>
+                                    <option value="UTC+05:00" timeZoneName="Asia/Karachi">(UTC+05:00) Islamabad, Karachi
+                                    </option>
+                                    <option value="UTC+05:30" timeZoneName="Asia/Kolkata">(UTC+05:30) New Delhi, Mumbai
+                                    </option>
+                                    <option value="UTC+06:00" timeZoneName="Asia/Dhaka">(UTC+06:00) Dhaka</option>
+                                    <option value="UTC+07:00" timeZoneName="Asia/Bangkok">
+                                        (UTC+07:00) Bangkok, Hanoi, Jakarta
+                                    </option>
+                                    <option value="UTC+08:00" timeZoneName="Asia/Singapore">(UTC+08:00) Singapore</option>
+                                    <option value="UTC+09:00" timeZoneName="Asia/Tokyo">(UTC+09:00) Tokyo</option>
+                                    <option value="UTC+09:30" timeZoneName="Australia/Adelaide">(UTC+09:30) Adelaide
+                                    </option>
+                                    <option value="UTC+10:00" timeZoneName="Australia/Sydney">(UTC+10:00) Sydney</option>
+                                    <option value="UTC+11:00" timeZoneName="Pacific/Guadalcanal">
+                                        (UTC+11:00) Solomon Islands
+                                    </option>
+                                    <option value="UTC+12:00" timeZoneName="Pacific/Auckland">(UTC+12:00) Auckland</option>
+                                    <option value="UTC+13:00" timeZoneName="Pacific/Tongatapu">(UTC+13:00) Nuku'alofa
+                                    </option>
+                                </select>
+                                <label for="timezone">Timezone</label>
+                            </div>
+                            <div class>
+                                <label for="formFile" class="form-label"><b>Hero Image</b></label>
+                                <input class="form-control" type="file" id="formFile" />
+                            </div>
+                            <div class>
+                                <label for="formFileLocation" class="form-label"><b>Map Location Image</b></label>
+                                <input class="form-control" type="file" id="formFileLocation" />
+                            </div>
+                            <div class>
+                                <label for="formFileVideo" class="form-label"><b>Hero Video</b></label>
+                                <input class="form-control" type="file" id="formFileVideo" />
+                            </div>
+                            <div class>
+                                <label for="formFileLogo" class="form-label"><b>Brand Logo</b></label>
+                                <input class="form-control" type="file" id="formFileLogo"/>
+                            </div>
+                            
+                            <div class="form-floating">
+                                <input type="text" id="theme" name="brandSlogan" class="form-control"
+                                    placeholder="Your Brand Slogan" />
+                                <label for="brandSlogan">Theme</label>
+                            </div>
+                            <div class="form-floating">
+                                <input type="text" id="brandShortName" name="brandShortName" class="form-control"
+                                    placeholder="Your Brand Short Name" maxlength="6" required/>
+                                <label for="brandShortName">Brand's Short Name (eg: CPIB, MS, RBI)</label>
+                            </div>
+                            <div class="form-floating">
+                                <input type="text" id="brandSlogan" name="brandSlogan" class="form-control"
+                                    placeholder="Your Brand Slogan" />
+                                <label for="brandSlogan">Brand Slogan / quirky line</label>
+                            </div>
+                            <div class="form-floating">
+                                <input type="text" id="brandAlertMessage" name="brandAlertMessage" class="form-control"
+                                    placeholder="Welcome/alert message" />
+                                <label for="brandAlertMessage">Welcome/alert message</label>
+                            </div>
+                            <hr>
+
+                       
+                        <!-- Bootstrap Modal -->
+                        <div class="modal fade" id="jsonModal" tabindex="-1" aria-labelledby="jsonModalLabel" aria-hidden="true">
+                            <div class="modal-dialog modal-lg">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title" id="jsonModalLabel">Review JSON Data</h5>
+                                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                    </div>
+                                    <div class="modal-body">
+                                        <pre id="jsonDisplay" class="bg-light p-3"></pre>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                                        <button type="button" class="btn btn-success" id="downloadBtn">Download JSON</button>
+                                        <button type="button" class="btn btn-success" id="copyBtn">Copy JSON</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+					
+<!------------------------------------------- Coomuncation ----------------------------------------------------------------------------------->
+						<h3 id="communication-settings">Communication</h3>
+						<div class="form-floating">
+							<input type="email" id="brandEmail" name="brandEmail" class="form-control"
+							required placeholder="ex:abc@gmail.com"  />
+							<label for="brandEmail">Email Address</label>
+						</div>
+						<div class="form-floating">
+							<input type="text" id="mapLocationPin" name="mapLocationPin" class="form-control"
+								placeholder="Location Pin" />
+							<label for="mapLocationPin">Google Maps or other map's pin</label>
+						</div>
+						<div class="form-floating">
+							<input type="text" id="brandAddress" name="brandAddress" class="form-control"
+								placeholder="Address" />
+							<label for="brandAddress">Address (official)</label>
+						</div>
+						<div class="form-floating">
+							<input type="text" id="brandAddressHTML" name="brandAddressHTML" class="form-control"
+								placeholder="Address in HTML" />
+							<label for="brandAddressHTML">Address in HTML (check supported html tags)</label>
+						</div>
+						<hr>
+<!---------------------------------------- Compliance ------------------------------------------------------------------------------------->
+						<h3 id="compliance-settings">Compliance</h3>
+
+						<div class="form-floating">
+							<input type="text" id="BusiessCetification" name="Businesscertification" class="form-control"
+								placeholder="EX:ISO 9001:2015" />
+							<label for="GSTNumber">Business Certification</label>
+						</div>
+						<div class="form-floating">
+							<input type="text" id="CerrtificationNumber" name="certificationNumber" class="form-control"
+								placeholder="EX:ISO1234567" />
+							<label for="CertificationNumber">Certification Number</label>
+						</div>
+						<div class="form-floating">
+							<input type="text" id="GSTNumber" name="GSTNumber" class="form-control"
+								placeholder="ex:27AAACZ1234Q3L5" />
+							<label for="GSTNumber">GST/ Tax Number</label>
+						</div>
+						<div class="form-floating">
+							<input type="text" id="panNumber" name="panNumber" class="form-control"
+								placeholder="ex:AAACZ1245P" />
+							<label for="panNumber">PAN ID</label>
+						</div>
+						<hr>
+<!--------------------------------------- Social Links ----------------------------------------------------------------------------->
+						<h3 id="social-settings">Social Links</h3>
+                        <div class="d-flex gap-5 align-center">
+                            <div class="form-floating">
+                                <input type="text" id="youtube" name="youtube" class="form-control"
+                                    placeholder="youtube URL" />
+                                <label for="youtube">Youtube channel URL</label>
+                            </div>
+                            <div class="form-check form-switch mt-3">
+                                <input class="form-check-input" type="checkbox" role="switch" id="youtubeshow" checked>
+                                <label class="form-check-label" for="youtubeshow">Show</label>
+                              </div>
+                        </div>
+                        <div class="d-flex gap-2 gap-5 align-center">                        
+                            <div class="form-floating">
+                                <input type="text" id="X" name="X" class="form-control" placeholder="X Profile URL" />
+                                <label for="X">X Profile URL</label>
+                            </div>
+                                <div class="form-check form-switch mt-3">
+                                    <input class="form-check-input" type="checkbox" role="switch" id="Xprofileshow" checked>
+                                    <label class="form-check-label" for="Xprofileshow">Show</label>
+                                </div>
+						</div>
+                        <div class="d-flex gap-2 gap-5 align-center">
+                            <div class="form-floating">
+                                <input type="text" id="instagram" name="instagram" class="form-control"
+                                    placeholder="Instagram URL" />
+                                <label for="instagram">Instagram URL</label>
+                            </div>
+                                <div class="form-check form-switch mt-3">
+                                    <input class="form-check-input" type="checkbox" role="switch" id="instagramshow" checked>
+                                    <label class="form-check-label" for="instagramshow">Show</label>
+                            </div>
+                        </div>
+                       <div class="d-flex gap-2 gap-5 align-center">
+                        <div class="form-floating">
+							<input type="text" id="facebook" name="facebook" class="form-control"
+								placeholder="Facebook URL" />
+							<label for="facebook">Facebook Page/ Profile URL</label>
+						</div>
+                        <div class="form-check form-switch mt-3">
+                            <input class="form-check-input" type="checkbox" role="switch" id="facebookshow" checked>
+                            <label class="form-check-label" for="facebookshow">Show</label>
+                          </div>
+
+                       </div>
+                        <div class="d-flex gap-2 gap-5 align-center">
+                            <div class="form-floating">
+                                <input type="text" id="linkedIn" name="linkedIn" class="form-control"
+                                    placeholder="LinkedIn URL" />
+                                <label for="linkedin">LinkedIn Profile URL</label>
+                            </div>
+                            <div class="form-check form-switch mt-3">
+                                <input class="form-check-input" type="checkbox" role="switch" id="linkedshow" checked>
+                                <label class="form-check-label" for="linkedshow">Show</label>
+                              </div>
+                        </div>
+						<hr>
+<!-- ----------------------------------Events ---------------------------------------------------------------------------->
+						<h3 id="event-settings">Events</h3>
+						<div id="event-form-container">
+                          <div id="event-form" class="event-form">
+							<h5 class="event-number"><strong>Event 1</strong></h5>
+						 
+							<div class="form-floating mb-3">
+								<input type="text" class="form-control" id="EventName" placeholder="enter event name">
+								<label for="EventName">Event Name</label>
+							</div>
+						  <div class="mb-3">
+							  <label for="formFileEventHeroImage" class="form-label"><b>Event Hero Image</b></label>
+							  <input class="form-control" type="file" id="formFileEventHeroImage" />
+						  </div>
+						  <div class="form-floating mb-3">
+							  <input type="text" class="form-control" id="floatingInputEventVenue" placeholder="enter event venue">
+							  <label for="floatingInputEventVenue">Event Venue</label>
+						  </div>
+						  <div class="form-floating mb-3">
+							<input type="URL" class="form-control" id="videoUrl" placeholder="Enter event venue" >
+							<label for="videoUrl">Video URL</label>
+						</div>
+						<div class="form-floating mb-3">
+							<input type="URL" class="form-control" id="threedurl" placeholder="Enter event venue" >
+							<label for="threedurl">3D URL</label>
+						</div>
+						<div class="form-floating mb-3">
+							<input type="URL" class="form-control" id="dedicatedPageurl" placeholder="Enter event venue" >
+							<label for="dedicatedPageurl">Dedicated Page URL</label>
+						</div>
+
+							<div class="form-check form-switch">
+								<input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckChecked" checked>
+								<label class="form-check-label" for="flexSwitchCheckChecked"><h6>Shadow Event</h6></label>
+							</div>
+							<div>
+								
+								<h5>Event Co-ordinates</h5>
+								<div class="form-floating mb-3">
+									<input type="number"  class="form-control" id="floatingInputLatitude" placeholder="23.974232">
+									<label for="floatingInputLatitude">Latitude</label>
+								</div>
+								<div class="form-floating mb-3">
+									<input type="number" class="form-control" id="floatingInputLongitude" placeholder="23.974232">
+									<label for="floatingInputLongitude">Longitude</label>
+								</div>
+							</div>
+							<div class="form-check form-switch">
+								<input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckCheckedLocked" checked>
+								<label class="form-check-label mb-3" for="flexSwitchCheckCheckedLocked"><h6>Locked</h6></label>
+							</div>
+							<hr>
+							<h5>Tax Details</h5>
+							<div class="form-floating mb-3">
+								<input type="text" class="form-control" id="eventTaxName" placeholder="Tax Name">
+								<label for="eventTaxName">Tax Name</label>
+							</div>
+						
+							<div class="form-check form-switch">
+								<input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckCheckedVariable" checked>
+								<label class="form-check-label" for="flexSwitchCheckCheckedVariable"><h6>Variable</h6></label>
+							</div>
+							<div class="form-floating mb-3">
+								<input type="number" class="form-control" id="floatingInputValue" placeholder="Tax Value">
+								<label for="floatingInputValue">Value</label>
+							</div>
+							<div class="form-floating mb-3">
+								<textarea class="form-control" placeholder="Leave a comment here" id="floatingTextarea"></textarea>
+								<label for="floatingTextarea"> Tax Disclaimer</label>
+							  </div>
+							  <div class="mb-2">
+								<hr>
+								  <b>Event Off Days: (select days on which the event is off) </b>
+							<div class="form-check form-switch">
+								<input class="form-check-input" type="checkbox" role="switch" name="offDays[]"
+									value="Sunday"  />
+								<label class="form-check-label" for="paxInfo">Sunday</label>
+							</div>
+							<div class="form-check form-switch">
+								<input class="form-check-input" type="checkbox" role="switch" name="offDays[]"
+									value="Monday"  />
+								<label class="form-check-label" for="paxInfo">Monday</label>
+							</div>
+							<div class="form-check form-switch">
+								<input class="form-check-input" type="checkbox" role="switch" name="offDays[]"
+									value="Tuesday"  />
+								<label class="form-check-label" for="paxInfo">Tuesday</label>
+							</div>
+							<div class="form-check form-switch">
+								<input class="form-check-input" type="checkbox" role="switch" name="offDays[]"
+									value="Wednesday"  />
+								<label class="form-check-label" for="paxInfo">Wednesday</label>
+							</div>
+							<div class="form-check form-switch">
+								<input class="form-check-input" type="checkbox" role="switch" name="offDays[]"
+									value="Thursday"  />
+								<label class="form-check-label" for="paxInfo">Thursday</label>
+							</div>
+							<div class="form-check form-switch">
+								<input class="form-check-input" type="checkbox" role="switch" name="offDays[]"
+									value="Friday"  />
+								<label class="form-check-label" for="paxInfo">Friday</label>
+							</div>
+							<div class="form-check form-switch">
+								<input class="form-check-input" type="checkbox" role="switch" name="offDays[]"
+									value="Saturday"  />
+								<label class="form-check-label" for="paxInfo">Saturday</label>
+							</div>
+							  </div>
+							  <hr>
+						<div class="mb-3">
+
+							<div id="dateContainerException">
+								<b>Event Exception On Dates: </b>
+								<div class="alert alert-danger bg-gradient">"Pipe-separated dates in the format <code class="text-nowrap">yyyy-mm-dd</code> (e.g., <code class="text-nowrap">2025-01-31|2026-12-31</code>) indicate exceptions where the booking portal will not accept bookings for January 31, 2025, and December 31, 2026, <b>even if it's a working day</b>."
+								</div>
+								<div class="form-floating">
+									<input class="form-control mb-3" type="text" id="exceptionbooking"
+										placeholder="Do not accept bookings for dates" />
+									<label for="exceptionbooking">Event exception for dates</label>
+								</div>
+							</div>
+							<div id="dateContainerOff">
+								<b>Event Off Dates: </b>
+								<div class="alert alert-danger bg-gradient">"Pipe-separated dates in the format <code class="text-nowrap">yyyy-mm-dd</code> (e.g., <code class="text-nowrap">2025-01-31|2026-12-31</code>) indicate off dates when the booking portal will not accept bookings for January 31, 2025, and December 31, 2026, <b>even if it's a working day</b>."
+								</div>
+								<div class="form-floating">
+									<input class="form-control" type="text" id="offbooking"
+										placeholder="Do not accept bookings for dates" />
+									<label for="offbooking">Event off for dates</label>
+								</div>
+							</div>
+									  							  
+						</div>
+						<hr>
+						<div class="form-check form-switch">
+							<input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckCheckedLive" checked>
+							<label class="form-check-label" for="flexSwitchCheckCheckedLive"><h6>Live</h6></label>
+						</div>
+						<div class="form-check form-switch">
+							<input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckCheckedHide" checked>
+							<label class="form-check-label" for="flexSwitchCheckCheckedHide"><h6>Hide Brand Name</h6></label>
+						</div>
+
+						<div class="form-floating mb-3">
+							<textarea class="form-control" placeholder="Leave a comment here" id="floatingTextareaEventDescription"></textarea>
+							<label for="floatingTextareaEventDescription">Event Description</label>
+						</div>
+						<div class="form-floating mb-3">
+							<textarea class="form-control" placeholder="Leave a comment here" id="floatingTextareaEventHelperText"></textarea>
+							<label for="floatingTextareaEventHelperText">Event Helper Text</label>
+						</div>
+						<div class="form-floating mb-3">
+							<input type="number" class="form-control" id="floatingInputEventPrice" placeholder="name@example.com">
+							<label for="floatingInputEventPrice">Event Price</label>
+						  </div>
+						<div class="form-floating mb-3">
+							<input type="number" class="form-control" id="floatingInputEventPriceMaximumQuantity" placeholder="name@example.com">
+							<label for="floatingInputEventPriceMaximumQuantity">Maximum Quantity</label>
+						  </div>
+						<div class="form-floating mb-3">
+							<input type="number" class="form-control" id="floatingInputEventPriceMinimumQuantity" placeholder="name@example.com">
+							<label for="floatingInputEventPriceMinimumQuantity">Minimum Quantity</label>
+						  </div>
+						  <div class="form-floating mb-3">
+							<input type="number" class="form-control" id="maxTicketsPerDay" placeholder="name@example.com" value="{{minimumQuantity}}">
+							<label for="maxTicketsPerDay">Maximum Tickets Per Day</label>
+						  </div>
+						<div class="form-floating mb-3">
+							<input type="number" class="form-control" id="floatingInputEventPriceMaximumGroupSize" placeholder="name@example.com">
+							<label for="floatingInputEventPriceMaximumGroupSize">Maximum Group Size</label>
+						  </div>
+							
+						  
+						  <div class="form-check form-switch">
+							  <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckCheckedPrimary" checked>
+							  <label class="form-check-label" for="flexSwitchCheckCheckedPrimary"><h6>Primary Event</h6></label>
+						  </div>
+						  <div class="form-floating mb-3">
+							  <input type="number" class="form-control" id="EventExpiry" placeholder="ex:30">
+							  <label for="EventExpiry">Event Expiry</label>
+							</div>
+						  <div class="mb-3">
+							<h6>Event Status</h6>
+							  <select class="form-select" id="eventStatus" value="Active">
+								  <option value="Active">Active</option>
+								  <option value="Inactive">Inactive</option>
+							  </select>
+						  </div>
+						  
+						
+						  <div class="form-check form-switch">
+							<input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckCheckedNotification" checked>
+							<label class="form-check-label" for="flexSwitchCheckCheckedNotification"><h6>Notification</h6></label>
+						</div>
+					
+							<div class="form-floating mb-3">
+								<input type="datetime-local" class="form-control" id="floatingInputAvailableOn">
+								<label for="floatingInputAvailableOn">Event Available On:(specify date and time)</label>
+							  </div>
+							<div class="form-floating mb-3">
+								<input type="datetime-local" class="form-control" id="floatingInputGoLiveDate">
+								<label for="floatingInputGoLiveDate">GoLive Date:</label>
+							  </div>
+
+							  <h6>Add On ID:</h6>
+							<div class="">
+                               <div class="alert alert-success p-2"><b>NOTE:</b>Separate ID(s) with pipe(|)</div>
+								<div class="form-floating">
+									<input type="text" class="form-control mb-3" id="floatingInputGrid" placeholder="ex:12abc">
+									<label for="floatingInputGrid">addonId</label>
+								</div>
+							</div>
+
+							  <div class="mb-3">
+								<h6>Event Type </h6>
+								  <select class="form-select" id="eventType">
+									  <option value="One-Time">One-Time</option>
+									  <option value="Recurring">Recurring</option>
+								  </select>
+							  </div>
+							  <div class="mb-3">
+								<h6>Event Ticekt Type </h6>
+								  <select class="form-select" id="eventTicketType">
+								  </select>
+
+							  </div>
+
+						</div>
+
+					</div>
+					<button type="button" class="btn btn-primary" onclick="addEventForm()">Add Event Form</button>
+					<button type="button" class="btn btn-danger" id="deleteEventButton" onclick="deleteLatestEventForm()" style="display: none;">Delete Latest Event Form</button>
+					
+
+
+
+                         <hr>
+<!----------------------------------- URL Settings ----------------------------------------------------->
+
+						<h3 id="URL-settings">URLs</h3>
+						<div class="form-floating mb-3">
+							<input type="url" class="form-control" id="ProductURL" placeholder="Enter event URL">
+							<label for="ProductURL">Product URL</label>
+						</div>
+						<div class="form-floating mb-3">
+							<input type="url" class="form-control" id="RootURL" placeholder="Enter event URL">
+							<label for="RootURL">Root URL</label>
+						</div>
+						<div class="form-floating mb-3">
+							<input type="url" class="form-control" id="HostingURL" placeholder="Enter event URL">
+							<label for="HostingURL">Hosting URL</label>
+						</div>
+						<hr>
+<!----------------------------------- SUPPORT Settings ----------------------------------------------------->
+
+						<h3 id="support-settings">Support Details</h3>
+						<div class="form-floating mb-3">
+							<input type="email" class="form-control" id="SupportMail" placeholder="Enter event URL">
+							<label for="SupportMail">Support Mail</label>
+						</div>
+						<div class="form-floating mb-3">
+							<input type="number" class="form-control" id="SupportPhone" placeholder="Enter event URL">
+							<label for="SupportPhone">Support Phone</label>
+						</div>
+						<div class="form-floating mb-3">
+							<input type="number" class="form-control" id="SupportWhatsapp" placeholder="Enter event URL">
+							<label for="SupportWhatsapp">Support WhatsApp</label>
+						</div>
+
+<!------------------------------------- Addon Settings ---------------------------------------------->
+<h3 id="addons-settings">Addons</h3>
+<div class="form-floating mb-3">
+	<input type="text" class="form-control" id="addonName" placeholder="Enter event URL">
+	<label for="addonName">Addon Name</label>
+</div>
+<div class="form-floating mb-3">
+	<input type="number" class="form-control" id="addonId" placeholder="Enter event URL">
+	<label for="addonId">Addon Id</label>
+</div>
+<div class="form-floating mb-3">
+	<textarea class="form-control" placeholder="Leave a comment here" id="addonDescription"></textarea>
+	<label for="addonDescription">Description</label>
+  </div>
+  <div class="form-floating mb-3">
+	<input type="URL" class="form-control" id="AddonvideoUrl" placeholder="Enter event venue" value="{{eventVenue}}">
+	<label for="AddonvideoUrl">Video URL</label>
+</div>
+<div class="form-floating mb-3">
+	<input type="URL" class="form-control" id="Addon3durl" placeholder="Enter event venue" value="{{eventVenue}}">
+	<label for="Addon3durl">3D URL</label>
+</div>
+<div class="form-floating mb-3">
+	<input type="URL" class="form-control" id="AddondedicatedPageurl" placeholder="Enter event venue" value="{{eventVenue}}">
+	<label for="AddondedicatedPageurl">Dedicated Page URL</label>
+</div>
+  <div class="form-floating mb-3">
+	<input type="number" class="form-control" id="addonunitPrice" placeholder="Enter event URL">
+	<label for="addonunitPrice">Unit Price</label>
+</div>
+<div class="form-floating mb-3">
+	<input type="text" class="form-control" id="addonTaxName" placeholder="Enter event URL">
+	<label for="addonTaxName">Addon TaxName</label>
+</div>
+<div class="form-floating mb-3">
+	<input type="number" class="form-control" id="addonTaxRate" placeholder="Enter event URL">
+	<label for="addonTaxRate">Addon TaxRate</label>
+</div>
+<div class="form-floating mb-3">
+	<input type="number" class="form-control" id="addonminimumQuantity" placeholder="Enter event URL">
+	<label for="addonminimumQuantity">Addon Minimum Quantity</label>
+</div>
+<div class="form-floating mb-3">
+	<input type="number" class="form-control" id="addonmaximumQuantity" placeholder="Enter event URL">
+	<label for="addonmaximumQuantity">Addon Maximum Quantity</label>
+</div>
+<div class="form-floating mb-3">
+	<input type="number" class="form-control" id="AddonmaxTicketsPerDay" placeholder="name@example.com" value="{{minimumQuantity}}">
+	<label for="AddonmaxTicketsPerDay">Maximum Tickets Per Day</label>
+  </div>
+<div class="form-floating mb-3">
+	<input type="number" class="form-control" id="addonstockLimit" placeholder="Enter event URL">
+	<label for="addonstockLimit">Addon Stock Limit</label>
+</div>
+						<hr>
+
+<!------------------------------------------- Tax details------------------------------------------------ -->
+
+						<h3 id="tax-settings">Tax Details</h3>
+						<div class="form-check form-switch">
+							<input class="form-check-input" type="checkbox" role="switch" id="isTaxable" checked>
+							<label class="form-check-label" for="isTaxable">Taxable</label>
+						  </div>
+						<div class="form-floating mb-3">
+							<input type="text" class="form-control" id="taxname" placeholder="Enter event URL">
+							<label for="taxname">Tax Name</label>
+						</div>
+						<div class="form-floating mb-3">
+							<input type="number" class="form-control" id="taxrrate" placeholder="Enter event URL">
+							<label for="taxrrate">Tax Rate</label>
+						</div>
+						<div class="form-check form-switch">
+							<input class="form-check-input" type="checkbox" role="switch" id="showOnPrintPage" checked>
+							<label class="form-check-label" for="showOnPrintPage">Show on Print Page</label>
+						  </div>
+						<div class="form-check form-switch">
+							<input class="form-check-input" type="checkbox" role="switch" id="printEnabled" checked>
+							<label class="form-check-label" for="printEnabled">Print Enabled</label>
+						  </div>
+						<div class="form-check form-switch">
+							<input class="form-check-input" type="checkbox" role="switch" id="iMinPrinter" checked>
+							<label class="form-check-label" for="iMinPrinter">Imin Printer</label>
+						  </div>
+						<div class="form-check form-switch">
+							<input class="form-check-input" type="checkbox" role="switch" id="browserPrintable" checked>
+							<label class="form-check-label" for="browserPrintable">Brower Printable</label>
+						  </div>
+						<div class="form-check form-switch">
+							<input class="form-check-input" type="checkbox" role="switch" id="showPrintButton" checked>
+							<label class="form-check-label" for="showPrintButton">Show Print Button</label>
+						  </div>
+						<div class="form-check form-switch">
+							<input class="form-check-input" type="checkbox" role="switch" id="isMultiPrint" checked>
+							<label class="form-check-label" for="isMultiPrint">Multi Print</label>
+						  </div>
+
+
+                    <hr>
+<!--------------------------------------------------- Printer settings ------------------------------------------------------------->
+						<h3 id="Printer-settings">Printer Settings</h3>
+						<div class="form-floating mb-3">
+							<input type="text" class="form-control" id="defaultPrinter" placeholder="Enter event URL" value="Imin">
+							<label for="defaultPrinter">Defualt Printer(Imin)</label>
+						</div>
+
+						<div class="form-check form-switch">
+							<input class="form-check-input" type="checkbox" role="switch" id="autoPrint" checked>
+							<label class="form-check-label" for="autoPrint">Auto Print</label>
+						  </div>
+						  <div class="form-check form-switch">
+							<input class="form-check-input" type="checkbox" role="switch" id="printerMultiPrint" checked>
+							<label class="form-check-label" for="printerMultiPrint">Multi Print</label>
+						  </div>
+
+
+<!----------------------------------------- print settings ----------------------------------------------------------------------------->
+						<h3 id="Print-settings">Print Setting</h3>
+						<div class="brandname mb-3">
+							<h6>Brand Name</h6>
+							<div class="form-floating mb-3">
+								<input type="text" class="form-control" id="printBrandname" placeholder="Enter event URL">
+								<label for="printBrandname">Name</label>
+							</div>
+							<div class="form-check form-switch">
+								<input class="form-check-input" type="checkbox" role="switch" id="brandnamePrint" checked>
+								<label class="form-check-label" for="brandnamePrint">Print</label>
+							  </div>
+							  <div class="form-floating mb-3">
+								<input type="number" class="form-control" id="brandnameorder" placeholder="Enter event URL">
+								<label for="brandnameorder">Order for Print (0-9)</label>
+							</div>
+						</div>
+						<div class="brandadddress">
+							<h6>Brand Address</h6>
+							<div class="form-floating mb-3">
+								<input type="text" class="form-control" id="printBrandAddress" placeholder="Enter event URL">
+								<label for="printBrandAddress">Address</label>
+							</div>
+							<div class="form-check form-switch">
+								<input class="form-check-input" type="checkbox" role="switch" id="AddressPrint" checked>
+								<label class="form-check-label" for="AddressPrint">Print</label>
+							  </div>
+							  <div class="form-floating mb-3">
+								<input type="number" class="form-control" id="Addressorder" placeholder="Enter event URL">
+								<label for="Addressorder">Order for Print (0-9)</label>
+							</div>
+						</div>
+						<div class="QR">
+							<h6>QR</h6>
+							<div class="form-floating mb-3">
+								<input type="text" class="form-control" id="QR" placeholder="Enter event URL">
+								<label for="QR">QR Value</label>
+							</div>
+							<div class="form-check form-switch">
+								<input class="form-check-input" type="checkbox" role="switch" id="QRPrint" checked>
+								<label class="form-check-label" for="QRPrint">Print</label>
+							  </div>
+							  <div class="form-floating mb-3">
+								<input type="number" class="form-control" id="QRorder" placeholder="Enter event URL">
+								<label for="QRorder">Order for Print (0-9)</label>
+							</div>
+						</div>
+						<div class="bookingtimestamp"> 
+							<h6>Booking Timestamp</h6>
+							<div class="form-floating mb-3">
+								<input type="text" class="form-control" id="bookingtimestamp" placeholder="Enter event URL">
+								<label for="bookingtimestamp">ex:2024-09-04T10:00:00Z</label>
+							</div>
+							<div class="form-check form-switch">
+								<input class="form-check-input" type="checkbox" role="switch" id="bookingtimestampPrint" checked>
+								<label class="form-check-label" for="bookingtimestampPrint">Print</label>
+							  </div>
+							  <div class="form-floating mb-3">
+								<input type="number" class="form-control" id="bookingtimestamporder" placeholder="Enter event URL">
+								<label for="bookingtimestamporder">Order for Print (0-9)</label>
+							</div>
+						</div>
+						<div class="visittimestamp">
+							<h6>Vistit Timestamp</h6>
+							<div class="form-floating mb-3">
+								<input type="text" class="form-control" id="visittimestamp" placeholder="Enter event URL">
+								<label for="visittimestamp">ex:2024-09-04T10:00:00Z</label>
+							</div>
+							<div class="form-check form-switch">
+								<input class="form-check-input" type="checkbox" role="switch" id="visitttimestampPrint" checked>
+								<label class="form-check-label" for="visitttimestampPrint">Print</label>
+							  </div>
+							  <div class="form-floating mb-3">
+								<input type="number" class="form-control" id="visitttimestampOrder" placeholder="Enter event URL">
+								<label for="visitttimestampOrder">Order for Print (0-9)</label>
+							</div>
+						</div>
+						<div class="validity">
+							<h6>Validity</h6>
+							<div class="form-floating mb-3">
+								<input type="text" class="form-control" id="Validity" placeholder="Enter event URL">
+								<label for="Validity">ex:2024-09-04T10:00:00Z</label>
+							</div>
+							<div class="form-check form-switch">
+								<input class="form-check-input" type="checkbox" role="switch" id="ValidityPrint" checked>
+								<label class="form-check-label" for="ValidityPrint">Print</label>
+							  </div>
+							  <div class="form-floating mb-3">
+								<input type="number" class="form-control" id="ValidityOrder" placeholder="Enter event URL">
+								<label for="ValidityOrder">Order for Print (0-9)</label>
+							</div>
+						</div>
+						<div class="disclaimers">
+							<h6>Disclaimers</h6>
+							<div id="disclaimers-container">
+								<div class="disclaimer-group" data-index="1">
+									<div class="form-floating mb-3">
+										<input type="text" class="form-control" id="disclaimers1" placeholder="Enter disclaimer">
+										<label for="disclaimers1">Disclaimer: 1</label>
+									</div>
+									<div class="form-check form-switch">
+										<input class="form-check-input" type="checkbox" role="switch" id="disclaimersPrint1" checked>
+										<label class="form-check-label" for="disclaimersPrint1">Print</label>
+									</div>
+									<div class="form-floating mb-3">
+										<input type="number" class="form-control" id="disclaimersorder1" min="0" max="9" placeholder="Enter order">
+										<label for="disclaimersorder1">Order for Print (0-9) (It will be same for all the Disclaimers)</label>
+									</div>
+									<button type="button" class="btn btn-danger deleteButton mb-3 w-100" style="display: none;" onclick="deleteDisclaimerField(this)">Delete</button>
+								</div>
+							</div>
+							<button type="button" class="btn btn-primary w-100" onclick="addDisclaimerField()">Add Disclaimer</button>
+							
+						  </div>
+						
+						
+						<div class="events">
+
+							<h6>Events</h6>
+						
+								<div id="event-container">
+									<div class="Event-group" data-index="1">
+										<div class="form-floating mb-3">
+											<input type="text" class="form-control" id="Event1" placeholder="Enter event URL">
+											<label for="Event1">Event: 1</label>
+										</div>
+										<div class="form-floating mb-3">
+											<input type="number" class="form-control" id="EventTickets1" min="0" placeholder="Enter number of tickets">
+											<label for="EventTickets1">Tickets</label>
+										</div>
+										<div class="form-floating mb-3">
+											<input type="number" class="form-control" id="EventAmount1" min="0" placeholder="Enter event amount">
+											<label for="EventAmount1">Amount</label>
+										</div>
+										<div class="form-check form-switch">
+											<input class="form-check-input" type="checkbox" role="switch" id="EventPrint1" checked>
+											<label class="form-check-label" for="EventPrint1">Print</label>
+										</div>
+										<div class="form-floating mb-3">
+											<input type="number" class="form-control" id="Eventsorder1" min="0" max="9" placeholder="Enter print order">
+											<label for="Eventsorder1">Order for Print (0-9) (It will be same for all the events)</label>
+										</div>
+										<button type="button" class="btn btn-danger EventdeleteButton mb-3 w-100" style="display: none;" onclick="deleteEventField(this)">Delete</button>
+									</div>
+								</div>
+								<button type="button" class="btn btn-primary w-100" onclick="addEventField()">Add Event</button>
+							
+						</div>
+						<div class="websiteurl">
+							<h6>Website URL</h6>
+							<div class="form-floating mb-3">
+								<input type="URL" class="form-control" id="WebsiteUrl" placeholder="Enter event URL">
+								<label for="WebsiteUrl">URL</label>
+							</div>
+							<div class="form-check form-switch">
+								<input class="form-check-input" type="checkbox" role="switch" id="WebsiteUrlPrint" checked>
+								<label class="form-check-label" for="WebsiteUrlPrint">Print</label>
+							  </div>
+							  <div class="form-floating mb-3">
+								<input type="number" class="form-control" id="WebsiteUrlorder" placeholder="Enter event URL">
+								<label for="WebsiteUrlorder">Order for Print (0-9)</label>
+							</div>
+						</div>
+
+						<div class="totaling">
+							<h6>Totaling Section</h6>
+							<div class="form-check form-switch">
+								<input class="form-check-input" type="checkbox" role="switch" id="TotalingPrint" checked>
+								<label class="form-check-label" for="TotalingPrint">Print</label>
+							  </div>
+							  <div class="form-floating mb-3">
+								<input type="number" class="form-control" id="TotalingOrder" placeholder="Enter event URL">
+								<label for="TotalingOrder">Order for Print (0-9)</label>
+							</div>
+						
+						</div>
+
+<!-------------------------------------Discount-settings ----------------------------------------------------------------------------->
+						<div class="container mt-4" id="discounts-settings">
+							<h3>Discounts</h3>
+							<div class="discount-section" data-index="1" id="discount1">
+								<h5>Discount 1</h5>
+								
+								<!-- discountId -->
+								<div class="form-floating mb-3">
+									<input type="number" class="form-control" id="discountId1" placeholder="Discount ID">
+									<label for="discountId1">Discount ID</label>
+								</div>
+
+								<!-- code -->
+								<div class="form-floating mb-3">
+									<input type="text" class="form-control" id="code1" placeholder="Discount Code">
+									<label for="code1">Discount Code</label>
+								</div>
+
+								<!-- isActive -->
+								<div class="form-check form-switch mb-3">
+									<input class="form-check-input" type="checkbox" id="isActive1" checked>
+									<label class="form-check-label" for="isActive1">Is Active</label>
+								</div>
+
+								<!-- criteria -->
+								<div class="form-floating mb-3">
+									<input type="text" class="form-control" id="criteria1" placeholder="Criteria">
+									<label for="criteria1">Criteria</label>
+								</div>
+
+								<!-- amountRange.minAmount -->
+								<div class="form-floating mb-3">
+									<input type="number" class="form-control" id="minAmount1" placeholder="Min Amount">
+									<label for="minAmount1">Min Amount</label>
+								</div>
+
+								<!-- amountRange.maxAmount -->
+								<div class="form-floating mb-3">
+									<input type="number" class="form-control" id="maxAmount1" placeholder="Max Amount">
+									<label for="maxAmount1">Max Amount</label>
+								</div>
+
+								<!-- discountValue -->
+								<div class="form-floating mb-3">
+									<input type="number" class="form-control" id="discountValue1" placeholder="Discount Value">
+									<label for="discountValue1">Discount Value (%)</label>
+								</div>
+
+								<!-- isVariable -->
+								<div class="form-check form-switch mb-3">
+									<input class="form-check-input" type="checkbox" id="isVariable1" checked>
+									<label class="form-check-label" for="isVariable1">Is Variable</label>
+								</div>
+
+								<button type="button" class="btn btn-danger DiscountdeleteButton w-100" style="display: none;" onclick="deleteDiscountField(this)">Delete</button>
+							</div>
+						</div>
+						<button type="button" class="btn btn-primary w-100" onclick="addDiscountField()">Add Discount</button>
+
+						<hr>
+
+<!-------------------------------------Restriction-settings -------------------------------------------------------------------------->
+						<h3 id="Restriction-settings">Restrictions</h3>
+						<div class="form-floating">
+							<select class="form-select" id="restrictedDuration">
+								<option value="Day">Day</option>
+								<option value="Week">Week</option>
+							</select>
+							<label for="restrictedDuration" class="form-label">Restricted Duration</label>
+						</div> 
+						<div class="form-floating">
+							<select class="form-select" id="restrictBy">
+								<option value="ID">ID</option>
+								<option value="Mobile">Mobile</option>
+							</select>
+							<label for="restrictBy" class="form-label">Restrict By</label>
+						</div> 
+						<hr>
+
+
+<!------------------------------------ Notification settings ------------------------------------------------------------------------------------->
+						<h3 id="notification-settings">Notification</h3>
+							<h6 class="text-light text-center p-2 bg-success bg-gradient border rounded">Success</h6>
+							<div class="form-check form-switch">
+								<input class="form-check-input" type="checkbox" role="switch" id="SMSSuccess" checked>
+								<label class="form-check-label" for="SMSSuccess">SMS</label>
+							</div>
+							<div class="form-check form-switch">
+								<input class="form-check-input" type="checkbox" role="switch" id="showWhatsAppSuccess" checked>
+								<label class="form-check-label" for="showWhatsAppSuccess">WhatsApp</label>
+							</div>
+							<div class="form-check form-switch">
+								<input class="form-check-input" type="checkbox" role="switch" id="delayedDeliverySuccess" checked>
+								<label class="form-check-label" for="delayedDeliverySuccess">Delayed Delivery</label>
+							</div>
+							<div class="form-floating mb-3">
+								<input type="email" class="form-control" id="DelaytimeSuccess" placeholder="name@example.com">
+								<label for="DelaytimeSuccess">Delay Time</label>
+							</div>
+							
+							<h6 class="text-light text-center p-2 bg-danger bg-gradient border rounded">Failure</h6>
+							<div class="form-check form-switch">
+								<input class="form-check-input" type="checkbox" role="switch" id="SMSFailure" checked>
+								<label class="form-check-label" for="SMSFailure">SMS</label>
+							</div>
+							<div class="form-check form-switch">
+								<input class="form-check-input" type="checkbox" role="switch" id="showWhatsAppFailure" checked>
+								<label class="form-check-label" for="showWhatsAppFailure">WhatsApp</label>
+							</div>
+							<div class="form-check form-switch">
+								<input class="form-check-input" type="checkbox" role="switch" id="delayedDeliveryFailure" checked>
+								<label class="form-check-label" for="delayedDeliveryFailure">Delayed Delivery</label>
+							</div>
+							<div class="form-floating mb-3">
+								<input type="email" class="form-control" id="DelaytimeFailure" placeholder="name@example.com">
+								<label for="DelaytimeFailure">Delay Time</label>
+							</div>
+
+							<h6 class="text-light text-center p-2 bg-info bg-gradient border rounded">Survey</h6>
+                            <div class="form-floating mb-3">
+								<input type="url" class="form-control" id="surveyurl" placeholder="name@example.com">
+								<label for="surveyurl">Survey URL</label>
+							</div>
+								<div class="form-check form-switch">
+									<input class="form-check-input" type="checkbox" role="switch" id="SMSSurvey" checked>
+									<label class="form-check-label" for="SMSSurvey">SMS</label>
+								</div>
+								<div class="form-check form-switch">
+									<input class="form-check-input" type="checkbox" role="switch" id="showWhatsAppSurvey" checked>
+									<label class="form-check-label" for="showWhatsAppSurvey">WhatsApp</label>
+								</div>
+								<div class="form-check form-switch">
+									<input class="form-check-input" type="checkbox" role="switch" id="delayedDeliverySurvey" checked>
+									<label class="form-check-label" for="delayedDeliverySurvey">Delayed Delivery</label>
+								</div>
+								<div class="form-floating mb-3">
+									<input type="email" class="form-control" id="DelaytimeSurvey" placeholder="name@example.com">
+									<label for="DelaytimeSurvey">Delay Time</label>
+								</div>
+								<hr>
+
+
+<!------------------------------------ payment settings---------------------------------------------------------------------------->
+						<h3 id="payment-settings">Payment Gateway</h3>
+						<div class="form-floating">
+							<select class="form-select" id="PaymentGateway">
+								<option value="PayTM">PayTM</option>
+								<option value="CashFree">CashFree</option>
+								<option value="Razorpay">Razorpay</option>
+							</select>
+							<label for="PaymentGateway" class="form-label">Active Payment Gateway</label>
+						</div>
+						<div>
+						<h5>For Live</h5>
+						<div class="alert alert-danger bg-gradient">
+							MID key can be found under Developers Section->API keys
+						</div>
+						<div class="form-floating mb-3">
+							<input class="form-control" type="text" id="merchantIDLive" />
+							<label for="merchantIDLive">Merchant ID</label>
+						</div>
+						<div class="alert alert-danger bg-gradient">
+							Secret key can be found under Developers Section->API keys
+						</div>
+						<div class="form-floating">
+							<input class="form-control" type="password" id="secretKeyLive" autocomplete="current-password" />
+							<label for="secretKeyLive">Secret Key/ API Key</label>
+						</div>
+						</div>
+						<div>
+						<h5>For Stage</h5>
+						<div class="alert alert-danger bg-gradient">
+							MID key can be found under Developers Section->API keys
+						</div>
+						<div class="form-floating">
+							<input class="form-control mb-3" type="text" id="merchantIDStage" />
+							<label for="merchantIDStage">Merchant ID</label>
+						</div>
+						<div class="alert alert-danger bg-gradient">
+							Secret key can be found under Developers Section->API keys
+						</div>
+						<div class="form-floating">
+							<input class="form-control" type="password" id="secretKeystage" autocomplete="current-password" />
+							<label for="secretKeystage">Secret Key/ API Key</label>
+						</div>
+						</div>
+						<div class="form-check form-switch">
+							<input class="form-check-input" type="checkbox" role="switch" id="isgtwylive">
+							<label class="form-check-label" for="isgtwylive">Payment Gateway Live</label>
+						  </div>
+						<hr>
+<!--------------------------------------- enable/disable features --------------------------------------------->
+						<h3 id="features-settings">Enable/Disable Features</h3>
+						<h6>Obfuscate</h6>
+						<div class="form-check form-switch">
+							<input class="form-check-input" type="checkbox" role="switch" id="obfuscateEnable" checked>
+							<label class="form-check-label" for="obfuscateEnable">Enable</label>
+						  </div>
+						<div class="form-check form-switch">
+							<input class="form-check-input" type="checkbox" role="switch" id="consoleMessages" checked>
+							<label class="form-check-label" for="consoleMessages">Console Messages</label>
+						  </div>
+						<div class="form-check form-switch">
+							<input class="form-check-input" type="checkbox" role="switch" id="deadCode" checked>
+							<label class="form-check-label" for="deadCode">Dead Code</label>
+						  </div>
+						<h6>Warning</h6>
+						<div class="form-check form-switch">
+							<input class="form-check-input" type="checkbox" role="switch" id="disableSecondaryEventWarning" checked>
+							<label class="form-check-label" for="disableSecondaryEventWarning">disable Secondary Event Warning</label>
+						  </div>
+						<div class="form-check form-switch">
+							<input class="form-check-input" type="checkbox" role="switch" id="disableAddonWarning">
+							<label class="form-check-label" for="disableAddonWarning">disable Addon Warning </label>
+						  </div>
+						<h6>Geolocation</h6>
+						<div class="form-check form-switch">
+							<input class="form-check-input" type="checkbox" role="switch" id="GeolocationEnable">
+							<label class="form-check-label" for="GeolocationEnable">Enable</label>
+						  </div>
+						<div class="form-check form-switch">
+							<input class="form-check-input" type="checkbox" role="switch" id="Geolocationnotification">
+							<label class="form-check-label" for="Geolocationnotification">Notifications</label>
+						  </div>
+						<div class="form-check form-switch">
+							<input class="form-check-input" type="checkbox" role="switch" id="GeolocationMandatory">
+							<label class="form-check-label" for="GeolocationMandatory">Mandatory</label>
+						  </div>
+						<h6>Multi Languages</h6>
+						<div class="form-check form-switch">
+							<input class="form-check-input" type="checkbox" role="switch" id="multilanguageenable">
+							<label class="form-check-label" for="multilanguageenable">Enable</label>
+						  </div>
+						  <div class="form-floating">
+							<select class="form-select" id="Planguage">
+									<option value="English" languageSymbol="EN">English</option>
+									<option value="Spanish" languageSymbol="ES">Spanish</option>
+									<option value="Russian" languageSymbol="RU">Russian</option>
+									<option value="German" languageSymbol="DE">German</option>
+									<option value="French" languageSymbol="FR">French</option>
+									<option value="Japanese" languageSymbol="JA">Japanese</option>
+									<option value="Portuguese" languageSymbol="PT">Portuguese</option>
+									<option value="Turkish" languageSymbol="TR">Turkish</option>
+									<option value="Italian" languageSymbol="IT">Italian</option>
+									<option value="Persian" languageSymbol="FA">Persian</option>
+									<option value="Dutch" languageSymbol="NL">Dutch</option>
+									<option value="Polish" languageSymbol="PL">Polish</option>
+									<option value="Chinese" languageSymbol="ZH">Chinese</option>
+									<option value="Vietnamese" languageSymbol="VI">Vietnamese</option>
+									<option value="Indonesian" languageSymbol="ID">Indonesian</option>
+									<option value="Czech" languageSymbol="CS">Czech</option>
+									<option value="Korean" languageSymbol="KO">Korean</option>
+									<option value="Ukrainian" languageSymbol="UK">Ukrainian</option>
+									<option value="Arabic" languageSymbol="AR">Arabic</option>
+									<option value="Greek" languageSymbol="EL">Greek</option>
+									<option value="Hebrew" languageSymbol="HE">Hebrew</option>
+									<option value="Swedish" languageSymbol="SV">Swedish</option>
+									<option value="Romanian" languageSymbol="RO">Romanian</option>
+									<option value="Hungarian" languageSymbol="HU">Hungarian</option>
+									<option value="Thai" languageSymbol="TH">Thai</option>
+									<option value="Danish" languageSymbol="DA">Danish</option>
+									<option value="Slovak" languageSymbol="SK">Slovak</option>
+									<option value="Finnish" languageSymbol="FI">Finnish</option>
+									<option value="Serbian" languageSymbol="SR">Serbian</option>
+									<option value="Norwegian" languageSymbol="NO">Norwegian</option>
+									<option value="Bulgarian" languageSymbol="BG">Bulgarian</option>
+									<option value="Lithuanian" languageSymbol="LT">Lithuanian</option>
+									<option value="Slovenian" languageSymbol="SL">Slovenian</option>
+									<option value="Catalan" languageSymbol="CA">Catalan</option>
+									<option value="Estonian" languageSymbol="ET">Estonian</option>
+									<option value="Latvian" languageSymbol="LV">Latvian</option>
+									<option value="Bokmål" languageSymbol="NB">Bokmål</option>
+									<option value="Croatian" languageSymbol="HR">Croatian</option>
+								  
+							</select>
+							<label for="Planguage">Primary Language</label>
+						</div>
+						  <div class="form-floating">
+							<select class="form-select" id="Slanguage">
+									<option value="English" languageSymbol="EN">English</option>
+									<option value="Spanish" languageSymbol="ES">Spanish</option>
+									<option value="Russian" languageSymbol="RU">Russian</option>
+									<option value="German" languageSymbol="DE">German</option>
+									<option value="French" languageSymbol="FR">French</option>
+									<option value="Japanese" languageSymbol="JA">Japanese</option>
+									<option value="Portuguese" languageSymbol="PT">Portuguese</option>
+									<option value="Turkish" languageSymbol="TR">Turkish</option>
+									<option value="Italian" languageSymbol="IT">Italian</option>
+									<option value="Persian" languageSymbol="FA">Persian</option>
+									<option value="Dutch" languageSymbol="NL">Dutch</option>
+									<option value="Polish" languageSymbol="PL">Polish</option>
+									<option value="Chinese" languageSymbol="ZH">Chinese</option>
+									<option value="Vietnamese" languageSymbol="VI">Vietnamese</option>
+									<option value="Indonesian" languageSymbol="ID">Indonesian</option>
+									<option value="Czech" languageSymbol="CS">Czech</option>
+									<option value="Korean" languageSymbol="KO">Korean</option>
+									<option value="Ukrainian" languageSymbol="UK">Ukrainian</option>
+									<option value="Arabic" languageSymbol="AR">Arabic</option>
+									<option value="Greek" languageSymbol="EL">Greek</option>
+									<option value="Hebrew" languageSymbol="HE">Hebrew</option>
+									<option value="Swedish" languageSymbol="SV">Swedish</option>
+									<option value="Romanian" languageSymbol="RO">Romanian</option>
+									<option value="Hungarian" languageSymbol="HU">Hungarian</option>
+									<option value="Thai" languageSymbol="TH">Thai</option>
+									<option value="Danish" languageSymbol="DA">Danish</option>
+									<option value="Slovak" languageSymbol="SK">Slovak</option>
+									<option value="Finnish" languageSymbol="FI">Finnish</option>
+									<option value="Serbian" languageSymbol="SR">Serbian</option>
+									<option value="Norwegian" languageSymbol="NO">Norwegian</option>
+									<option value="Bulgarian" languageSymbol="BG">Bulgarian</option>
+									<option value="Lithuanian" languageSymbol="LT">Lithuanian</option>
+									<option value="Slovenian" languageSymbol="SL">Slovenian</option>
+									<option value="Catalan" languageSymbol="CA">Catalan</option>
+									<option value="Estonian" languageSymbol="ET">Estonian</option>
+									<option value="Latvian" languageSymbol="LV">Latvian</option>
+									<option value="Bokmål" languageSymbol="NB">Bokmål</option>
+									<option value="Croatian" languageSymbol="HR">Croatian</option>
+								   
+							</select>
+							<label for="Slanguage">Secondary Language</label>
+						</div>
+						<h6>Disclaimer/Instructions</h6>
+						<div class="alert alert-success">
+							<b>Note:</b>For the next instruction, press Enter and then write.
+						</div>
+						<div class="form-floating">
+							<textarea class="form-control" placeholder="Leave a comment here" id="instruction" style="height: 100px"></textarea>
+							<label for="instruction">Enter the Instructions here</label>
+						  </div>
+						<h6>Gatekeeper Settings</h6>
+						<div class="form-check form-switch">
+							<input class="form-check-input" type="checkbox" role="switch" id="multiScan" checked />
+							<label class="form-check-label" for="multiScan">Multi-Scan Ticket</label>
+						</div>
+						<div class="form-check form-switch">
+							<input class="form-check-input" type="checkbox" role="switch" id="ncmcEnabled" disabled />
+							<label class="form-check-label" for="ncmcEnabled">NCMC Compliant Ticket</label>
+						</div>
+						<div class="form-floating mb-3">
+							<input type="text" class="form-control" id="activityType" placeholder="activity type">
+							<label for="activityType">Activity type</label>
+						  </div>
+						<div class="form-check form-switch">
+							<input class="form-check-input" type="checkbox" role="switch" id="paxInfo" disabled />
+							<label class="form-check-label" for="paxInfo">Ticket has Visitor's Personal Details</label>
+						</div>
+						<div class="form-floating">
+							<select class="form-select" id="gatekeeperLanguage">
+								<option value>Do Not Announce Ticket</option>
+								<option value="hi-IN">हिन्दी (Hindi)</option>
+								<option value="mr-IN">मराठी (Marathi)</option>
+								<option value="bn-IN">বাংলা (Bengali)</option>
+								<option value="gu-IN">ગુજરાતી (Gujarati)</option>
+								<option value="ta-IN">தமிழ் (Tamil)</option>
+								<option value="te-IN">తెలుగు (Telugu)</option>
+								<option value="kn-IN">ಕನ್ನಡ (Kannada)</option>
+								<option value="ml-IN">മലയാളം (Malayalam)</option>
+								<option value="pa-IN">ਪੰਜਾਬੀ (Punjabi)</option>
+								<option value="or-IN">ଓଡ଼ିଆ (Odia)</option>
+								<option value="as-IN">অসমীয়া (Assamese)</option>
+								<option value="ur-IN">اردو (Urdu)</option>
+								<option value="en-US">English - US</option>
+								<option value="en-GB">English - UK</option>
+							</select>
+							<label for="gatekeeperLanguage" class="form-label">Annoucement Language</label>
+						</div>
+						<h5 class="mt-5">Portal Settings</h5>
+						<table class="table align-middle table-light">
+							<tr>
+								<td><b>Start at</b></td>
+								<td>
+									<div class="form-floating">
+										<input class="form-control" type="number" id="openingTimeHour"
+											placeholder="Opening Time" min="00" max="11" />
+										<label for="openingTimeHours">Hour</label>
+									</div>
+								</td>
+								<td>
+									<div class="form-floating">
+										<input class="form-control" type="number" id="openingTimeHourMins"
+											placeholder="Opening Time Mins" min="00" max="59" />
+										<label for="openingTimeHourMins">Mins</label>
+									</div>
+								</td>
+								<td>
+									<div class="form-floating">
+										<select class="form-select" id="openingmeridian">
+												<option value="AM" >AM</option>
+												<option value="PM" >PM</option>											  
+										</select>
+										<label for="openingmeridian">AM/PM</label>
+									</div>
+								</td>
+							</tr>
+							<tr>
+								<td>
+									<b>Close at</b>
+								</td>
+								<td>
+									<div class="form-floating">
+										<input class="form-control" type="number" id="closingTimeHours"
+											placeholder="Closing Time Hours" min="00" max="11" />
+										<label for="closingTimeHours">Hour</label>
+									</div>
+								</td>
+								<td>
+									<div class="form-floating">
+										<input class="form-control" type="number" id="closingTimeMins"
+											placeholder="Closing Time Mins" min="00" max="59" />
+										<label for="closingTimeMins">Mins</label>
+									</div>
+								</td>
+								<td>
+									<div class="form-floating">
+										<select class="form-select" id="closingmeridian">
+											<option value="PM" >PM</option>											  
+											<option value="AM" >AM</option>
+										</select>
+										<label for="closingmeridian">AM/PM</label>
+									</div>
+								</td>
+							</tr>
+						</table>
+						<b>Portal open on : </b>
+							<div class="form-floating mb-3">
+								<input type="number" class="form-control" id="advanceBooking" placeholder="name@example.com">
+								<label for="advanceBooking">Advance Booking(in days)</label>
+							</div>
+							<div class="form-floating mb-3">
+								<input type="number" class="form-control" id="bookingTimeOut" placeholder="name@example.com">
+								<label for="bookingTimeOut">Booking TimeOut (in minutes)</label>
+							</div>
+							<div class="form-floating mb-3">
+								<input type="url" class="form-control" id="bookingStatsGraph" placeholder="name@example.com">
+								<label for="bookingStatsGraph">Booking Status Graph(url)</label>
+							</div>
+						<div class="form-check form-switch">
+							<input class="form-check-input" type="checkbox" role="switch" name="offDay[]"
+								value="Sunday"  />
+							<label class="form-check-label" for="paxInfo">Sunday</label>
+						</div>
+						<div class="form-check form-switch">
+							<input class="form-check-input" type="checkbox" role="switch" name="offDay[]"
+								value="Monday"  />
+							<label class="form-check-label" for="paxInfo">Monday</label>
+						</div>
+						<div class="form-check form-switch">
+							<input class="form-check-input" type="checkbox" role="switch" name="offDay[]"
+								value="Tuesday"  />
+							<label class="form-check-label" for="paxInfo">Tuesday</label>
+						</div>
+						<div class="form-check form-switch">
+							<input class="form-check-input" type="checkbox" role="switch" name="offDay[]"
+								value="Wednesday"  />
+							<label class="form-check-label" for="paxInfo">Wednesday</label>
+						</div>
+						<div class="form-check form-switch">
+							<input class="form-check-input" type="checkbox" role="switch" name="offDay[]"
+								value="Thursday"  />
+							<label class="form-check-label" for="paxInfo">Thursday</label>
+						</div>
+						<div class="form-check form-switch">
+							<input class="form-check-input" type="checkbox" role="switch" name="offDay[]"
+								value="Friday"  />
+							<label class="form-check-label" for="paxInfo">Friday</label>
+						</div>
+						<div class="form-check form-switch">
+							<input class="form-check-input" type="checkbox" role="switch" name="offDay[]"
+								value="Saturday"  />
+							<label class="form-check-label" for="paxInfo">Saturday</label>
+						</div>
+						<b>Bookings off on dates: </b>
+						<div class="alert alert-danger bg-gradient">
+							Pipe seperated dates in format "yyyy-mm-dd".
+							<code class="text-nowrap">Eg: 2025-01-31|2026-12-31</code> indicate that the booking portal
+							will
+							not accept bookings for January 31 2025 &amp; December 31 2026 <b> even if its a working
+								day</b>
+						</div>
+						<div class="form-floating">
+							<input class="form-control" type="text" id="nobooking"
+								placeholder="Do not accept bookings for dates" />
+							<label for="nobooking">Do not accept bookings for dates</label>
+						</div>
+						<b>Exception on dates: </b>
+						<div class="alert alert-danger bg-gradient">
+							Pipe seperated dates in format "yyyy-mm-dd".
+							<code class="text-nowrap">Eg: 2025-01-31|2026-12-31</code> indicate that the booking portal
+							will
+							not accept bookings for January 31 2025 &amp; December 31 2026 <b> even if its a working
+								day</b>
+						</div>
+						<div class="form-floating">
+							<input class="form-control" type="text" id="exceptionDates"
+								placeholder="Do not accept bookings for dates" />
+							<label for="exceptionDates">Exception for dates</label>
+						</div>
+
+						<div class="form-check form-switch">
+							<input class="form-check-input" type="checkbox" role="switch" id="collectPersonalInfo" checked>
+							<label class="form-check-label" for="collectPersonalInfo">Collect Personal Info</label>
+						  </div>
+						  <div class="form-floating">
+							<input class="form-control" type="number" id="paxNumber"
+								placeholder="paxNumber" />
+							<label for="paxNumber">Pax Number</label>
+						</div>
+						<div class="form-check form-switch">
+							<input class="form-check-input" type="checkbox" role="switch" id="collectforAll" checked>
+							<label class="form-check-label" for="collectforAll">Collect for All</label>
+						  </div>
+
+						  <h5>Fields</h5>
+							<div id="form-container">
+								<div class="form-group" data-index="1" id="field-set-1">
+									<div class="form-floating mb-3">
+										<input type="text" class="form-control mb-3" id="fieldName1" placeholder="Field Name">
+										<label for="fieldName1">Field Name</label>
+									</div>
+									<div class="form-floating">
+										<input type="text" class="form-control mb-3" id="fieldType1" placeholder="Field Type">
+										<label for="fieldType1">Field Type</label>
+									</div>
+									<div class="form-floating mb-3">
+										<input type="number" class="form-control mb-3" id="minimumValue1" placeholder="Min">
+										<label for="minimumValue1">Minimum Value</label>
+									</div>
+									<div class="form-floating">
+										<input type="number" class="form-control mb-3" id="maximumValue1" placeholder="Max">
+										<label for="maximumValue1">Maximum Value</label>
+									</div>
+									<div class="form-floating mb-3">
+										<input type="text" class="form-control" id="regExValidation1" placeholder="Validation">
+										<label for="regExValidation1">Validation</label>
+									</div>
+									<!-- *******************CODE CHANGED******************************* -->
+									<button type="button" class="btn btn-danger FielddeleteButton" style="display: none;" onclick="deleteField(this)">Delete</button>
+								</div>
+							</div>
+
+							<button type="button" class="btn btn-primary" onclick="addField()">Add Field</button>
+<hr>
+
+<!----------------------------------- custom code ---------------------------------------------------------->
+						<h3 id="code-settings">Custom Code</h3>
+						<div class="alert alert-danger bg-gradient">
+							<b>Warning!</b>This might affect the overall working of the portal. If you are not sure
+							about
+							CSS rules or custom javascript, please DO NOT paste anything here. Custom CSS may get
+							applied
+							immediately and JS requires approval from Zipr Tech Support Team
+						</div>
+						<div class="form-floating">
+							<textarea class="form-control" type="text" id="customCSS"></textarea>
+							<label for="customCSS">Paste Custom CSS Here</label>
+						</div>
+						<div class="form-floating">
+							<textarea class="form-control" type="text" id="customJS"></textarea>
+							<label for="customJS">Paste Custom JS Here (requires approval)</label>
+						</div>
+					</div>
+					<div class="col-sm-6 p-4">
+						<div class="card sticky-top" style="top: 100px">
+							<div class="card-body" id="helper">
+								<h1>Helper Text</h1>
+								<div>
+									
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</form>
+			<hr class="mb-5" />
+		</div>
+	</div>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/luxon/3.4.4/luxon.min.js"
+		integrity="sha512-dUlSLLkxslGILhPdCkALwk4szPhp3xmZIKFtlUD+O9Lslq41Aksmdt5OGqpomDoT4FsCUH70jQU8ezZHI3v1RQ=="
+		crossorigin="anonymous" referrerpolicy="no-referrer" type="538f27e954b939c5da98ced5-text/javascript"></script>
+	<script rel="prefetch" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"
+		type="538f27e954b939c5da98ced5-text/javascript"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.7.8/handlebars.min.js"
+		type="538f27e954b939c5da98ced5-text/javascript"></script>
+		<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+	<script src="/js/all.js" crossorigin="anonymous" referrerpolicy="no-referrer"
+		type="538f27e954b939c5da98ced5-text/javascript"></script>
+	<script type="538f27e954b939c5da98ced5-text/javascript">
+			// jQuery AJAX actions
+			const firstScrollSpyEl = document.querySelector('[data-bs-spy="scroll"]');
+			firstScrollSpyEl.addEventListener("activate.bs.scrollspy", () => {
+				const activeSection = document.querySelector(".sidebar .nav-link.active");
+
+				//console.log("Activated section:", sectionName);
+				$("#active-section").html(
+					`<i class="fa-solid fa-angle-right me-2 text-muted"></i>${$(activeSection).text()}`
+				);
+				$("#helper h1").html($(activeSection).text());
+
+				$("#helper p").html(generateRandomParagraph(50));
+			});
+
+			function returnPortalOffDays() {
+				var selectedLanguages = [];
+				$('input[name="offDays[]"]:checked').each(function () {
+					selectedLanguages.push($(this).val());
+				});
+
+				return selectedLanguages;
+			}
+
+			
+		</script>
+	<script defer src="https://static.cloudflareinsights.com/beacon.min.js"
+		data-cf-beacon="{&quot;token&quot;: &quot;fa5dc9ac3b324dd4a1252c9aff84a97a&quot;}"
+		type="538f27e954b939c5da98ced5-text/javascript"></script>
+	<script src="/cdn-cgi/scripts/7d0fa10a/cloudflare-static/rocket-loader.min.js"
+		data-cf-settings="538f27e954b939c5da98ced5-|49" defer></script>
+	<script defer
+		src="https://static.cloudflareinsights.com/beacon.min.js/vcd15cbe7772f49c399c6a5babf22c1241717689176015"
+		integrity="sha512-ZpsOmlRQV6y907TI0dKBHq9Md29nnaEIPlkf84rnaERnq6zvWvPUqr2ft8M1aS28oN72PdrCzSjY4U6VaAw1EQ=="
+		data-cf-beacon='{"rayId":"8c17539d6c2f7027","version":"2024.8.0","r":1,"token":"5430bd5b345f451792b16a50b44c1bcf","serverTiming":{"name":{"cfExtPri":true,"cfL4":true}}}'
+		crossorigin="anonymous"></script>
+	
+<script src="setting.js"></script>
+<script src="inputToJson.js"></script>
+</body>
+
+</html> 
