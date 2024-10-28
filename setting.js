@@ -138,9 +138,9 @@ let disclaimerCounter = 1;
 
     function addEventField() {
         eventCounter++;
-        const eventContainer = document.getElementById('event-container');
+        const eventContainer = document.getElementById('event-store');
         const newEventField = document.createElement('div');
-        newEventField.classList.add('Event-group');
+        newEventField.classList.add('Event-grouping');
         newEventField.setAttribute('data-index', eventCounter);
         newEventField.innerHTML = `
             <div class="form-floating mb-3">
